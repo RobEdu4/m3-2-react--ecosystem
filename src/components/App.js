@@ -1,10 +1,11 @@
 import React from "react";
-import ReactDOM from "react-dom";
+
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Home from "./Home";
 import Nav from "./Nav";
 import About from "./About";
 import styled from "styled-components";
+import ItemDetails from "./ItemDetails";
 // import ListingGrid from "./ListingGrid";
 
 const AppWrapper = styled.div`
@@ -12,7 +13,6 @@ const AppWrapper = styled.div`
 `;
 
 const App = (props) => {
-  console.log(props.items);
   return (
     <AppWrapper>
       <Router>
@@ -20,8 +20,10 @@ const App = (props) => {
           <Nav />
           <Switch>
             <Route exact path="/" component={Home}></Route>
-
             <Route path="/About" component={About}></Route>
+            <Route path={`/items/:itemId`} component={ItemDetails}>
+              <ItemDetails />
+            </Route>
           </Switch>
         </div>
       </Router>
