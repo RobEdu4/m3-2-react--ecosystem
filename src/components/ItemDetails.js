@@ -92,7 +92,7 @@ const ItemDetails = () => {
         {inStock ? (
           <BuyButton>${currentItem.price} - Buy Now</BuyButton>
         ) : (
-          <BuyButton>out of stock</BuyButton>
+          <BuyButton>- Out of Stock -Pre Order !</BuyButton>
         )}
         <InfoSellerWrapper>
           <SellerPicture src={currentSeller.avatarSrc} alt={currentSeller.id} />
